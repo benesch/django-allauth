@@ -31,6 +31,9 @@ class FacebookProvider(OAuth2Provider):
     name = 'Facebook'
     package = 'allauth.socialaccount.providers.facebook'
     account_class = FacebookAccount
+    
+    def __unicode__(self):
+        return 'Facebook'
 
     def __init__(self):
         self._locale_callable_cache = None

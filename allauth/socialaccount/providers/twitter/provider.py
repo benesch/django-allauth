@@ -33,6 +33,8 @@ class TwitterProvider(OAuthProvider):
     name = 'Twitter'
     package = 'allauth.socialaccount.providers.twitter'
     account_class = TwitterAccount
-        
+    
+    def __unicode__(self):
+        return 'Twitter'        
         
 providers.registry.register(TwitterProvider)

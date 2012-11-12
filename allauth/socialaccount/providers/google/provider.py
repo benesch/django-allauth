@@ -32,4 +32,7 @@ class GoogleProvider(OAuth2Provider):
             scope.append(Scope.USERINFO_EMAIL)
         return scope
 
+    def __unicode__(self):
+        return 'Google'
+
 providers.registry.register(GoogleProvider)
