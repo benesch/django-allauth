@@ -36,8 +36,8 @@ class TwitterOAuthAdapter(OAuthAdapter):
         extra_data = client.get_user_info()
         uid = extra_data['id']
         name = extra_data['name'].split(" ", 1)
-        first_name = if len(name) > 0 name[0] else ''
-        last_name if len(name) > 1 name[1] else ''
+        first_name = name[0] if len(name) > 0 else ''
+        last_name = name[1] if len(name) > 1 else ''
         user = User(username=extra_data['screen_name'], first_name=first_name, last_name=last_name)
         account = SocialAccount(user=user,
                                 uid=uid,
